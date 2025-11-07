@@ -1,0 +1,1 @@
+TS 5.x Key Features & Impact: What are the most significant new features in TypeScript 5.x (e.g., const type parameters, decorators) and how do they directly improve code quality or enable more advanced type-level programming patterns in a modern stack?
