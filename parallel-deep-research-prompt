@@ -1,0 +1,102 @@
+# 🤖 TypeScript Expert Agent Research (Updated for TS 5.9)
+
+**Agent ID**: `typescript-expert`
+**Purpose**: Type safety, generics, inference, and **TS 5.9 best practices** across DB → API → UI
+**Tech Stack**: **TS 5.9**, Drizzle, tRPC, Zod, React 19, Next.js 16
+**Tooling**: Ultracite (zero-config Biome preset), Biome (formatter/linter)
+**Context**: End-to-end type safety with automated quality enforcement, leveraging **TS 5.9 features and performance gains**.
+
+---
+
+## Research Objectives
+
+Maintain type safety across application stack: DB schema → API → UI components, with a focus on **TypeScript 5.9 migration and optimization**.
+
+### 1. Common Pitfalls & Migration
+
+**Context7 Queries** (3K tokens):
+* **TS 5.9 fundamentals & minimal `tsconfig.json`**
+* Generics & utility types, focusing on **performance caching benefits**
+* Type inference patterns, especially across Drizzle/Zod/tRPC
+* Strict mode config (using new **TS 5.9 `tsc --init` defaults**)
+* TS with React 19
+* Ultracite/Biome setup
+
+**Parallel Research**: TS mistakes 2025, anti-patterns, **TS 5.9 behavioral changes (e.g., `ArrayBuffer` hierarchy)**, type vs interface, any/unknown/never, strict mode pitfalls
+
+**Pitfalls (Revised)**:
+* **`ArrayBuffer`/`TypedArray` Change**: Handling the new type hierarchy (especially for Node.js `Buffer` usage).
+* **`any` Escape**: Use proper types (Biome: `noBannedTypes`).
+* **Type Assertions**: Overuse `as` vs type guards.
+* **Non-null Assertions**: Unsafe `!` (Biome: `noNonNullAssertion`).
+* **Drizzle Types**: Missing schema inference.
+* **tRPC Types**: Not extracting router types, especially regarding **TS 5.9 performance improvements**.
+* **Code Quality**: Skip Ultracite/Biome.
+* **Import Organization**: Missing `export type` / `import type` (Biome: `useExportType`, `useImportType`).
+
+---
+
+### 2. Advanced Patterns & Optimization
+
+**Key Topics (Revised)**:
+* **TS 5.9 Features**: **`import defer`** syntax and use cases for lazy loading.
+* **Type Inference Strategies**: Maximize inference, leveraging the **`Cache Instantiations on Mappers` optimization** for complex generics (Zod/tRPC).
+* Generic Constraints: Advanced patterns.
+* Conditional Types: Complex transformations.
+* **Developer Experience**: Using **Expandable Hovers** to debug complex types.
+* **Performance**: Type-checking optimization, focusing on the reported **~11% speed increase**.
+* Module Augmentation: Extend third-party types.
+* **`tsc --init` Modern Config**: Best practices for the new minimal `tsconfig.json`.
+
+---
+
+### 3. Recent Changes: TypeScript 5.9 Deep Dive
+
+**Parallel Research**: What's new in **TypeScript 5.9 (2025)**, breaking changes, performance improvements, and migration impact.
+
+**Track (Revised)**:
+* **TS 5.9 New Features**: **Minimal `tsc --init`**, **`import defer`** (namespace imports only), **Expandable Hovers**.
+* **Performance**: **Caching intermediate type instantiations** (improving Zod/tRPC performance) and **~11% speed-up**.
+* **Behavioral Change**: `ArrayBuffer` is no longer a supertype of `TypedArray` (including Node `Buffer`).
+* **`tsconfig.json`**: New defaults (`module: "nodenext"`, `strict: true`).
+* **JSX Preservation**: React 19 transform.
+
+---
+
+### 4. Advanced Keywords (Unchanged Content - Focus on TS 5.9 context)
+
+**(Content remains the same, but the focus should be how these concepts interact with TS 5.9 optimizations.)**
+
+**Core Types**, **Generics**, **Utility Types**, and **Integration (Zod, tRPC, Drizzle, React, Next.js)** remain essential.
+
+---
+
+### 5. Ultracite & Biome (Unchanged Content)
+
+**(Content remains the same, focused on automated quality enforcement.)**
+
+---
+
+## Research Strategy
+
+**Phase 1**: **TS 5.9 features** (defer, minimal config), strict config, tsconfig.json best practices, **`ArrayBuffer` behavior change**.
+**Phase 2**: Type inference patterns, generic inference, **leveraging 5.9 type caching optimization** (Zod/tRPC).
+**Phase 3**: Conditional types, mapped types, template literals, predicates, unions.
+**Phase 4**: Drizzle types, tRPC types, Zod types, React types, Next.js types.
+**Phase 5**: type vs interface, avoid any/as, **5.9 performance verification**, error handling, testing.
+**Phase 6**: Ultracite install, Biome rules, VS Code setup, format on save, monorepo, overrides, performance.
+
+---
+
+## Success Criteria
+
+* ✅ **TS 5.9 features implementation**: **`import defer`** guidance, new `tsconfig.json` defaults.
+* ✅ End-to-end safety (DB → API → UI).
+* ✅ Type inference strategies, optimized by **TS 5.9 caching**.
+* ✅ Generic & conditional types.
+* ✅ Zod/tRPC/Drizzle integration.
+* ✅ **Mitigation plan for `ArrayBuffer`/`TypedArray` type change.**
+* ✅ Performance optimization and verification of **~11% speed-up**.
+* ✅ tsconfig.json best practices (**minimal 5.9 config**).
+* ✅ Ultracite setup & Biome TS rules.
+
